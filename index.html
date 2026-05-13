@@ -5,7 +5,23 @@
         <meta name="viewport" content="">
     </head>
     <body>
+
+        <div id ="favorite movies">
+            <h2>My Favorite movies are: </h2>
+            <ul id="listOfMovies">
+
+            </ul>
+        </div>
+
+        <dive id="favoriteFoods">
+            <h3>My favorite foods are: </h3>
+            <ul id="listOfFavoriteFoods">
+
+            </ul>
+        </dive>
+
         <script>
+            var numberForLoop = 0
             for(let i=0; i <=54; i +=2){
                 numberForLoop += 6
 
@@ -32,7 +48,7 @@
             console.log(movies[4])
             console.log(movies[2])
 
-            for(let i=0; i < movies.length(); i++)
+            for(let i=0; i < movies.length; i++)
             {
                 console.log(movies[i])
             }
@@ -46,10 +62,11 @@
 
             console.log(numberArray)
 
+            //2D array
             var twoDarray = [
-                [0,0,0,0,0,0]
-                [1,24,57,85,1,1]
-                [23,123,6234,124,123,1]
+                [0,0,0,0,0,0],
+                [1,24,57,85,1,1],
+                [23,123,6234,124,123,1],
                 [1,2,3,4,5,6]
 
             ]
@@ -59,6 +76,58 @@
                 {for(let y = 0; y < twoDarray[x].length; y++)
                     console.log(twoDarray([x][y]))
                 }
+            }
+
+            var person ={
+                first:'joe',
+                last:'taco'
+            }
+
+
+
+            console.log(person.last)
+            console.log(person.first)
+
+            person.first = 'Gage'
+            person.last = 'CarrotHead'
+
+            console.log(person.first)
+            console.log(person.last)
+
+            var car = {
+                wheels: 2000,
+                Engine: true,
+                oil:"synthetic",
+                windows:1,
+                drive: function () {console.log('vroom vroom')}
+            }
+
+            console.log("This car has" + car.wheels + "wheels")
+            car.drive()
+
+            var  unOrderedMovieList = document.querySelector('#listOfMovies')
+
+            for(let i = 0; i < movies.length; i++)
+            {
+                unOrderedMovieList.innerHTML += "<li>" + movies[i] + "</li>"
+            }
+
+            //reg array
+            var favoriteFood = [
+                'pizza','fries', 'nuggets', 'taco', 'iceCream',
+                'stew', 'curry', 'doubles', 'turkey', 'rice'
+            ]
+
+            //loops throuh favorit foods array
+            for(let i = 0; i < favoriteFood.length; i++)
+            { 
+                listOfFavoriteFoods.innerHTML += "<li>" + favoriteFood[i] + "</li>"
+            }
+
+            //loops through all keys in car
+            for(let key in car)
+            {
+                console.log(car[key])
             }
         </script>
     </body>
